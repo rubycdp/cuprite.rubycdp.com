@@ -40,24 +40,36 @@ export default {
     return {
       skills: [
         {
-          name: 'Navigation & finders',
-          imgName: 'skill_02.png'
+          name: 'Debugging',
+          imgName: 'slider_debugging.png'
         },
         {
-          name: 'Screenshots',
-          imgName: 'skill_02.png'
+          name: 'Clicking/scrolling',
+          imgName: 'slider_click-scroll.png'
         },
         {
-          name: 'Mouse & keyboard',
-          imgName: 'skill_02.png'
+          name: 'Request headers',
+          imgName: 'slider_request-headers.png'
         },
         {
-          name: 'Network, cookies, headers',
-          imgName: 'skill_02.png'
+          name: 'Network traffic',
+          imgName: 'slider_network-traffic.png'
         },
         {
-          name: 'JS, frames, dialogs',
-          imgName: 'skill_02.png'
+          name: 'Manipulating cookies',
+          imgName: 'slider_manipulating-cookies.png'
+        },
+        {
+          name: 'Screenshot',
+          imgName: 'slider_screenshot.png'
+        },
+        {
+          name: 'Authorization',
+          imgName: 'slider_authorization.png'
+        },
+        {
+          name: 'URL Blacklisting & Whitelisting',
+          imgName: 'slider_url-list.png'
         }
       ],
       activeSkillNumber: 0
@@ -158,7 +170,7 @@ export default {
     flex-direction: column;
     @include md {
       flex-shrink: 0;
-      margin-right: 70px;
+      margin-right: 20px;
     }
     @include sm {
       flex-shrink: 0;
@@ -178,11 +190,10 @@ export default {
       position: relative;
       align-self: flex-start;
       font-size: 24px;
-      font-weight: bold;
       line-height: 1.35;
       margin-bottom: 24px;
       cursor: pointer;
-      transition: color .1s;
+      transition: opacity .1s;
       @include sm {
         font-size: 20px;
         margin-bottom: 16px;
@@ -200,7 +211,7 @@ export default {
         margin-bottom: 0;
       }
       &:hover {
-        color: $green;
+        opacity: .8;
         svg {
           opacity: 1;
           transition: opacity .1s;
@@ -214,7 +225,10 @@ export default {
         opacity: 0;
       }
       &_active {
-        color: $green;
+        font-weight: bold;
+        &:hover {
+          opacity: 1;
+        }
         svg {
           opacity: 1;
           transition: opacity .1s;
@@ -223,13 +237,9 @@ export default {
     }
   }
   &__slides {
-    margin-top: -68px;
     margin-left: auto;
     @include md {
       margin-top: 0;
-    }
-    @include xs {
-      padding: 0 16px;
     }
   }
 }
