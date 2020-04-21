@@ -21,7 +21,7 @@ export default {
   data () {
     return {
       text: 'Let’s try',
-      path: links.ferrum
+      path: links.capture
     }
   }
 }

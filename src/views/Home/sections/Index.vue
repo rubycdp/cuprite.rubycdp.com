@@ -6,8 +6,8 @@
         <a href="#scroll-one" v-smooth-scroll="scrollOptions">
           {{ explore }}
         </a>
-        <a :href="links.ferrum.path" target="_blank">
-          {{ links.ferrum.text }}
+        <a :href="links.capture.path" target="_blank">
+          {{ links.capture.text }}
         </a>
       </div>
       <img class="index__bg-image" src="@/assets/images/home/cover_illistration.png" alt="image">
@@ -26,9 +26,9 @@ export default {
     return {
       title: 'Fearless Ruby Chrome driver',
       links: {
-        ferrum: {
+        capture: {
           text: 'GitHub',
-          path: links.ferrum
+          path: links.capture
         }
       },
       explore: 'Explore',

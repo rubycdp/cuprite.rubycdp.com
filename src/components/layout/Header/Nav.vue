@@ -28,7 +28,7 @@ export default {
         // },
         {
           text: 'GitHub',
-          path: links.ferrum
+          path: links.capture
         }
       ]
     }
