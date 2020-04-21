@@ -58,7 +58,6 @@ export default {
   color: $white;
   font-size: 16px;
   font-weight: 300;
-  padding-top: 20px;
   @include sm {
     font-size: 16px;
   }
@@ -89,6 +88,7 @@ export default {
   }
   .z-index-wrapper {
     position: relative;
+    padding-top: 20px;
     &_top {
       z-index: 2;
       background: $black;
