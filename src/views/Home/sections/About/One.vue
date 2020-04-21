@@ -28,9 +28,11 @@ export default {
   data () {
     return {
       title: 'Meet',
-      text: `Ferrum provides you a high level API interface to Chrome browser and allows 
-        you to fully automate it and grab data from any public site you want. 
-        There’s no additional software required — only Chrome, Ruby and you.`,
+      text: `Cuprite is a pure Ruby driver (read as no Selenium/ WebDriver/ 
+        ChromeDriver dependency) for Capybara. It allows you to run Capybara 
+        tests on a headless Chrome or Chromium. Under the hood it uses Ferrum which 
+        is high-level API to the browser by CDP protocol. The design of the driver 
+        is as close to Poltergeist as possible though it's not a goal.`,
       advantages: [
         {
           text: 'Pure Chrome',
@@ -41,8 +43,8 @@ export default {
           imgPath: '/home/meet_ruby.png'
         },
         {
-          text: 'No addiction',
-          imgPath: '/home/meet_addiction.png'
+          text: 'Capybara\'s friend',
+          imgPath: '/home/meet_friend.png'
         }
       ]
     }
@@ -107,14 +109,13 @@ export default {
     div {
       display: flex;
       flex-direction: column;
-      margin-right: 160px;
+      margin-right: 8%;
+      width: 25%;
+      flex-shrink: 0;
       @include md {
-        margin-right: 11.92%;
-      }
-      @include sm {
-        margin-right: 8.48%;
       }
       @include xs {
+        width: auto;
         margin-right: 0;
         margin-bottom: 34px;
         &:last-child {
@@ -126,7 +127,9 @@ export default {
       }
     }
     img {
+      width: 100%;
       margin-bottom: 34px;
+      max-width: 180px;
     }
     span {
       display: inline-block;
