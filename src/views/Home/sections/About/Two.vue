@@ -17,7 +17,6 @@
           @click="setActiveSkillNumber(index)"
         >
           <span>{{ skill.name }}</span>
-          <SVGUnderline />
         </div>
       </div>
       <div class="two__slides">
@@ -30,14 +29,12 @@
 <script>
 import SVGSkillTitleLeft from '@/assets/images/home/skill_title_l.svg'
 import SVGSkillTitleRight from '@/assets/images/home/skill_title_r.svg'
-import SVGUnderline from '@/assets/images/home/underline.svg'
 
 export default {
   name: 'Two',
   components: {
     SVGSkillTitleLeft,
-    SVGSkillTitleRight,
-    SVGUnderline
+    SVGSkillTitleRight
   },
   data () {
     return {
