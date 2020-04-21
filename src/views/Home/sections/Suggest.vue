@@ -33,18 +33,18 @@ export default {
       title: 'USEFUL',
       services: [
         {
-          name: 'Cuprite',
-          description: `Is a pure Ruby Capybara driver which uses Ferrum underneath. 
-            Basically it makes Ferrum to be compatible with Capybara calls`,
+          name: 'Ferrum',
+          description: `Ferrum provides you a high level API interface to Chrome browser
+            and allows you to fully automate it and grab data from any public website you want.`,
           link: {
             text: 'See more',
-            path: links.cuprite
+            path: links.ferrum
           }
         },
         {
           name: 'Vessel',
-          description: `In this simple framework you can build and start running 
-            in parallel your crawler which works on top of Ferrum`,
+          description: `Vessel is Ruby high-level web crawling framework based
+            on Ferrum for extracting the data you need from websites.`,
           link: {
             text: 'See more',
             path: links.vessel
