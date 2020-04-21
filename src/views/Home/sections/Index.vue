@@ -24,7 +24,7 @@ export default {
   },
   data () {
     return {
-      title: 'Fearless Ruby Chrome driver',
+      title: 'Headless ruby driver for Capybara',
       links: {
         cuprite: {
           text: 'GitHub',
@@ -75,7 +75,7 @@ export default {
     max-width: 745px;
     margin: 10px 0 32px;
     @include sm {
-      max-width: 295px;
+      max-width: 310px;
     }
     @include xxs {
       letter-spacing: -0.04em;
