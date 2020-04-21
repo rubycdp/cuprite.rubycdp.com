@@ -43,11 +43,10 @@ export default {
     svg {
       position: absolute;
       bottom: -26px;
-      right: -118px;
+      right: -102px;
       @include sm {
-        transform: scale(0.5) translate(89px, 1px);
+        transform: scale(0.5) translate(52px, -12px);
         bottom: -44px;
-        right: -102px;
       }
     }
   }
