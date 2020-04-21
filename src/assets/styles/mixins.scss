@@ -1,0 +1,8 @@
+@mixin page-container {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0 48px;
+  @include xs {
+    padding: 0 24px;
+  }
+}

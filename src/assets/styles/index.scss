@@ -1,0 +1,15 @@
+@import 'normalize.scss';
+@import 'colors.scss';
+@import 'variables.scss';
+@import 'grid.scss';
+@import 'mixins.scss';
+
+body {
+  font-family: 'Hepta Slab', serif;
+}
+img {
+  max-width: 100%;
+}
+.bg-black {
+  background-color: $black;
+}
