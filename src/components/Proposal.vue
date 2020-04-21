@@ -30,7 +30,7 @@ export default {
 <style lang="scss" scoped>
 .proposal {
   padding: 114px 0;
-  background: $red;
+  background: $green;
   @include sm {
     padding: 60px 0;
   }

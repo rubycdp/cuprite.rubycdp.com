@@ -54,7 +54,7 @@ export default {
     color: $white;
     transition: color .1s;
     &:hover {
-      color: $red;
+      color: $green;
     }
     &:last-child {
       margin-right: 0;

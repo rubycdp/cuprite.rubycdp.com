@@ -137,9 +137,9 @@ export default {
         line-height: 1.2;
       }
       &:hover {
-        color: $red;
+        color: $green;
         svg path {
-          fill: $red;
+          fill: $green;
         }
       }
     }

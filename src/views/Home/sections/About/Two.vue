@@ -200,7 +200,7 @@ export default {
         margin-bottom: 0;
       }
       &:hover {
-        color: $red;
+        color: $green;
         svg {
           opacity: 1;
           transition: opacity .1s;
@@ -214,7 +214,7 @@ export default {
         opacity: 0;
       }
       &_active {
-        color: $red;
+        color: $green;
         svg {
           opacity: 1;
           transition: opacity .1s;
