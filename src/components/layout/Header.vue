@@ -32,6 +32,7 @@ export default {
   z-index: 100;
   @include sm {
     padding: 32px 0;
+    margin-bottom: 67px;
   }
   &__content {
     max-width: 960px;
