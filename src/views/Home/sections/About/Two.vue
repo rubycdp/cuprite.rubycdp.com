@@ -2,21 +2,26 @@
   <div class="two">
     <div class="two__title-wrapper">
       <SVGSkillTitleLeft />
-      <h2 class="two__title">{{ title }}</h2>
+      <h2 class="two__title">
+        <span>Supported</span>
+        <span> features</span>
+      </h2>
       <SVGSkillTitleRight />
     </div>
     <div class="two__skills">
       <div class="two__triggers">
         <div
-          class="two-skill"
+          :class="getSkillClassList(index)"
           v-for="(skill, index) in skills"
           :key="index"
+          @click="setActiveSkillNumber(index)"
         >
-          <a :href="skill.href" target="_blank">{{ skill.name }}</a>
+          <span>{{ skill.name }}</span>
+          <SVGUnderline />
         </div>
       </div>
       <div class="two__slides">
-        <img src="@/assets/images/home/skill_02.png" alt="skill">
+        <img :src="activeSkillImagePath" alt="skill">
       </div>
     </div>
   </div>
@@ -25,38 +30,76 @@
 <script>
 import SVGSkillTitleLeft from '@/assets/images/home/skill_title_l.svg'
 import SVGSkillTitleRight from '@/assets/images/home/skill_title_r.svg'
+import SVGUnderline from '@/assets/images/home/underline.svg'
 
 export default {
   name: 'Two',
   components: {
     SVGSkillTitleLeft,
-    SVGSkillTitleRight
+    SVGSkillTitleRight,
+    SVGUnderline
   },
   data () {
     return {
-      title: 'Skillful',
       skills: [
         {
           name: 'Navigation & finders',
-          href: 'https://github.com/rubycdp/ferrum#navigation'
+          imgName: 'skill_02.png'
         },
         {
           name: 'Screenshots',
-          href: 'https://github.com/rubycdp/ferrum#screenshots'
+          imgName: 'skill_02.png'
         },
         {
           name: 'Mouse & keyboard',
-          href: 'https://github.com/rubycdp/ferrum#mouse'
+          imgName: 'skill_02.png'
         },
         {
           name: 'Network, cookies, headers',
-          href: 'https://github.com/rubycdp/ferrum#network'
+          imgName: 'skill_02.png'
         },
         {
           name: 'JS, frames, dialogs',
-          href: 'https://github.com/rubycdp/ferrum#javascript'
+          imgName: 'skill_02.png'
         }
+      ],
+      activeSkillNumber: 0
+    }
+  },
+  computed: {
+    /**
+     * @returns string
+     */
+    activeSkillImagePath () {
+      const imgName = this.skills[this.activeSkillNumber].imgName
+      return this.getImgUrl(imgName)
+    }
+  },
+  methods: {
+    /**
+     * @param {number} index Skill number
+     * @returns array
+     */
+    getSkillClassList (index) {
+      return [
+        'two-skill',
+        index === this.activeSkillNumber ? 'two-skill_active' : ''
       ]
+    },
+    /**
+     * @param {number} index Skill number
+     * @returns void
+     */
+    setActiveSkillNumber (index) {
+      this.activeSkillNumber = index
+    },
+    /**
+     * Get dynamic image path
+     * @param {string} imgPath
+     * @returns string
+     */
+    getImgUrl (imgName) {
+      return require('@/assets/images/home/' + imgName)
     }
   }
 }
@@ -69,8 +112,12 @@ export default {
     padding-bottom: 120px;
   }
   &__title {
+    width: min-content;
     @include sm {
       margin-bottom: 32px;
+    }
+    @include xs {
+      font-size: 41px;
     }
   }
   &__title-wrapper {
@@ -85,23 +132,20 @@ export default {
       bottom: 50%;
       transform: translateY(48%);
       &:first-child {
-        left: -37px;
+        left: -78px;
+        bottom: 45%;
         @include sm {
-          transform: scale(0.6641) translate(0px, 75%);
-        }
-        @include xs {
-          left: -27px;
+          transform: scale(0.6641) translate(34px, 75%);
         }
       }
       &:last-child {
-        right: -48px;
-        bottom: 45%;
+        right: -59px;
+        bottom: 44%;
         @include sm {
-          transform: scale(0.6641) translate(-20px, 80%);
+          transform: scale(0.6641) translate(-3px, 82%);
         }
         @include xs {
-          right: -53px;
-          bottom: 49%;
+          transform: scale(0.6641) translate(-3px, 72%);
         }
       }
     }
@@ -137,16 +181,11 @@ export default {
       position: relative;
       align-self: flex-start;
       font-size: 24px;
-      font-weight: 500;
+      font-weight: bold;
       line-height: 1.35;
       margin-bottom: 24px;
       cursor: pointer;
       transition: color .1s;
-      a {
-        color: $white;
-        opacity: 1;
-        transition: opacity .1s;
-      }
       @include sm {
         font-size: 20px;
         margin-bottom: 16px;
@@ -164,14 +203,24 @@ export default {
         margin-bottom: 0;
       }
       &:hover {
-        a {
-          opacity: .7;
+        color: $red;
+        svg {
+          opacity: 1;
+          transition: opacity .1s;
         }
       }
+      svg {
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+      }
       &_active {
-        a {
-          // color: $red;
-          font-weight: bold;
+        color: $red;
+        svg {
+          opacity: 1;
+          transition: opacity .1s;
         }
       }
     }
