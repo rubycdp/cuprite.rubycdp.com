@@ -1,4 +1,4 @@
-# Capture website
+# Cuprite website
 
 ## Project setup
 ```

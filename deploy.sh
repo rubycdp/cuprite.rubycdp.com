@@ -17,6 +17,6 @@ git add -A
 git commit -m 'Build'
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:rubycdp/capture-website.git master:gh-pages
+git push -f git@github.com:rubycdp/cuprite-website.git master:gh-pages
 
 cd -

@@ -28,7 +28,7 @@ export default {
         // },
         {
           text: 'GitHub',
-          path: links.capture
+          path: links.cuprite
         }
       ]
     }
